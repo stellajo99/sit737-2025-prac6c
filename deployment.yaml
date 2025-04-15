@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: prac5p-deployment
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: prac5p
+  template:
+    metadata:
+      labels:
+        app: prac5p
+    spec:
+      containers:
+      - name: prac5p-container
+        image: stellajo99/sit737-2025-prac5p:v2
+        ports:
+        - containerPort: 3000
